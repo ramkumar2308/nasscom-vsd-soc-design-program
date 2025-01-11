@@ -1,11 +1,10 @@
-# Digital VLSI SoC Design & Planning
+![Screenshot from 2025-01-12 00-06-07](https://github.com/user-attachments/assets/35aa9679-c329-4e12-b923-97760e9db395)# Digital VLSI SoC Design & Planning
 #### _2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow_
 This repository offers resources and examples for designing and planning VLSI (Very Large Scale Integration) and SoC (System on Chip) systems, covering the complete design flow from specifications to physical implementation with a focus on modern semiconductor methodologies and tools.
 # VLSI Desgin Flow
 #### _The VLSI Design Flow involves a series of well-defined steps to convert a high-level system specification into a physical silicon chip._
-<p align="center">
-  <img src="Downloads" alt="asic_flow1" width="600">
-</p>
+
+![asic_flow1](https://github.com/user-attachments/assets/e208d6c8-ef85-435d-bca9-783ac4b5d0ce)
 
 <details>
 <summary>The flow is divided into front-end and back-end stages:</summary>
@@ -65,3 +64,70 @@ This repository offers resources and examples for designing and planning VLSI (V
 </details>
 These steps ensure a systematic and efficient approach to designing reliable, high-performance VLSI chips.
 
+# Design Preparation and Synthesis Run Snapshots
+
+
+![Screenshot from 2025-01-12 00-06-07](https://github.com/user-attachments/assets/b34c009e-f916-4a8e-93aa-3169a7f213ce)
+
+![Screenshot from 2025-01-12 00-07-15](https://github.com/user-attachments/assets/4a365e1f-d909-4c9f-8c63-d4df3641cda1)
+
+![Screenshot from 2025-01-12 00-09-13](https://github.com/user-attachments/assets/42c4ec9d-2c76-4e58-bce3-dfb7381d35e1)
+
+# Content
+## Day 1: Inception of open-source EDA, OpenLANE and Sky130 PDK
+**1. Understanding the Chip Package and Wire Bonding:**
+
+ In embedded boards, what we call the "chip" is actually its package—a protective casing around the actual chip. The chip itself is typically located at the center of the 
+ package, with connections established using the wire bonding method, a basic wired connection.
+ 
+**2. Structure of a Semiconductor Die:**
+
+Inside a chip, signals to and from the external world pass through pads. The core, housing the chip's digital logic, is surrounded by these pads. Together, the core and pads form the die, the fundamental unit of semiconductor manufacturing.
+
+**3. Foundries, IPs, and Macros in Semiconductor Manufacturing:**
+
+A foundry is where semiconductor chips are manufactured. Foundry IPs are specialized intellectual properties requiring advanced expertise, while repeatable digital logic blocks are known as macros.
+
+### Understanding ISA (Instruction Set Architecture)
+- **Compilation:** The C program is compiled into assembly language using a specific ISA, such as RISC-V (Reduced Instruction Set Computing - V).
+- **Conversion:** The assembly code is then translated into machine language (binary logic 0s and 1s) that the hardware understands.
+- **Implementation:** The RISC-V specification is implemented using an RTL (Register Transfer Level) hardware description language.
+- **Physical Design:** The RTL is converted into a physical layout using the standard PnR (Place and Route) or RTL-to-GDSII flow.
+
+# Implementation
+
+# Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
+
+The **yosys_2.stat.rpt** file is generated as part of the synthesis process in Yosys, an open-source hardware synthesis tool. It provides a comprehensive report of synthesis statistics, offering detailed insights into the design post-synthesis.
+<details>
+<summary>This yosys_2.stat.rpt file helps designers analyze the following aspects of their hardware design:</summary>
+
+- Module Statistics: Details of synthesized modules, including their instances and resource utilization.
+- **Cell Statistics:** Information on the types and counts of standard cells or logic elements used.
+- **Top-Level Design Summary:** Overall summary of the synthesized design, including the total number of cells, I/O ports, and gate count.
+- **Utilization Metrics:** Resource usage such as logic gates, registers, and multiplexers.
+- **Warnings and Errors:** Alerts regarding issues encountered during synthesis, such as unconnected ports or unsupported constructs.
+</details>
+
+# Calculating the Flop Ratio:
+
+Flop Ratio = Number of D Flipflops / Total number of cells
+
+Percentage of DFF's = Flop Ratio * 100
+
+## Synthesis Report for PicoRV32A
+
+![Screenshot from 2025-01-12 00-21-45](https://github.com/user-attachments/assets/506fdd01-eee0-4d72-bd12-ee6c38eb2697)
+
+![Screenshot from 2025-01-12 00-21-55](https://github.com/user-attachments/assets/ddca09a1-c143-4d49-a91d-083e032ed889)
+
+No. of D Flipflops = 1613
+
+No. Cells = 14876
+
+Flop Ratio = No. of D Flipflops/ No. of Cells = 1613 / 14876
+
+## Flop Ratio = 0.1084
+
+Percentage of DFF's = 0.1084 * 100 
+## Percentage of DFF's = 10.842 %

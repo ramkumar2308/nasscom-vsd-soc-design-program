@@ -1,5 +1,4 @@
-![Screenshot from 2025-01-12 00-06-07](https://github.com/user-attachments/assets/35aa9679-c329-4e12-b923-97760e9db395)# Digital VLSI SoC Design & Planning
-#### _2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow_
+# Digital VLSI SoC Design & Planning
 This repository offers resources and examples for designing and planning VLSI (Very Large Scale Integration) and SoC (System on Chip) systems, covering the complete design flow from specifications to physical implementation with a focus on modern semiconductor methodologies and tools.
 # VLSI Desgin Flow
 #### _The VLSI Design Flow involves a series of well-defined steps to convert a high-level system specification into a physical silicon chip._
@@ -64,15 +63,6 @@ This repository offers resources and examples for designing and planning VLSI (V
 </details>
 These steps ensure a systematic and efficient approach to designing reliable, high-performance VLSI chips.
 
-# Design Preparation and Synthesis Run Snapshots
-
-
-![Screenshot from 2025-01-12 00-06-07](https://github.com/user-attachments/assets/b34c009e-f916-4a8e-93aa-3169a7f213ce)
-
-![Screenshot from 2025-01-12 00-07-15](https://github.com/user-attachments/assets/4a365e1f-d909-4c9f-8c63-d4df3641cda1)
-
-![Screenshot from 2025-01-12 00-09-13](https://github.com/user-attachments/assets/42c4ec9d-2c76-4e58-bce3-dfb7381d35e1)
-
 # Content
 ## Day 1: Inception of open-source EDA, OpenLANE and Sky130 PDK
 **1. Understanding the Chip Package and Wire Bonding:**
@@ -95,6 +85,15 @@ A foundry is where semiconductor chips are manufactured. Foundry IPs are special
 - **Physical Design:** The RTL is converted into a physical layout using the standard PnR (Place and Route) or RTL-to-GDSII flow.
 
 # Implementation
+
+# Design Preparation and Synthesis Run Snapshots
+
+![Screenshot from 2025-01-12 00-06-07](https://github.com/user-attachments/assets/b34c009e-f916-4a8e-93aa-3169a7f213ce)
+
+![Screenshot from 2025-01-12 00-07-15](https://github.com/user-attachments/assets/4a365e1f-d909-4c9f-8c63-d4df3641cda1)
+
+![Screenshot from 2025-01-12 00-09-13](https://github.com/user-attachments/assets/42c4ec9d-2c76-4e58-bce3-dfb7381d35e1)
+
 
 # Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
 

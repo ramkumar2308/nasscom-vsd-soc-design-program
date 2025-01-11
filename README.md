@@ -3,6 +3,9 @@
 This repository offers resources and examples for designing and planning VLSI (Very Large Scale Integration) and SoC (System on Chip) systems, covering the complete design flow from specifications to physical implementation with a focus on modern semiconductor methodologies and tools.
 # VLSI Desgin Flow
 #### _The VLSI Design Flow involves a series of well-defined steps to convert a high-level system specification into a physical silicon chip._
+<p align="center">
+  <img src="Downloads" alt="asic_flow1" width="600">
+</p>
 
 <details>
 <summary>The flow is divided into front-end and back-end stages:</summary>
@@ -61,3 +64,4 @@ This repository offers resources and examples for designing and planning VLSI (V
 - Test the manufactured chip using Automatic Test Equipment (ATE) to ensure it functions as intended.
 </details>
 These steps ensure a systematic and efficient approach to designing reliable, high-performance VLSI chips.
+

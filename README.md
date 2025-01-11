@@ -86,7 +86,7 @@ A foundry is where semiconductor chips are manufactured. Foundry IPs are special
 
 # Implementation
 
-# Design Preparation and Synthesis Run Snapshots
+### Design Preparation and Synthesis Run Snapshots
 
 ![Screenshot from 2025-01-12 00-06-07](https://github.com/user-attachments/assets/b34c009e-f916-4a8e-93aa-3169a7f213ce)
 
@@ -95,7 +95,7 @@ A foundry is where semiconductor chips are manufactured. Foundry IPs are special
 ![Screenshot from 2025-01-12 00-09-13](https://github.com/user-attachments/assets/42c4ec9d-2c76-4e58-bce3-dfb7381d35e1)
 
 
-# Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
+## Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
 
 The **yosys_2.stat.rpt** file is generated as part of the synthesis process in Yosys, an open-source hardware synthesis tool. It provides a comprehensive report of synthesis statistics, offering detailed insights into the design post-synthesis.
 <details>
@@ -108,13 +108,13 @@ The **yosys_2.stat.rpt** file is generated as part of the synthesis process in Y
 - **Warnings and Errors:** Alerts regarding issues encountered during synthesis, such as unconnected ports or unsupported constructs.
 </details>
 
-# Calculating the Flop Ratio:
+### Calculating the Flop Ratio:
 
 Flop Ratio = Number of D Flipflops / Total number of cells
 
 Percentage of DFF's = Flop Ratio * 100
 
-## Synthesis Report for PicoRV32A
+### Synthesis Report for PicoRV32A
 
 ![Screenshot from 2025-01-12 00-21-45](https://github.com/user-attachments/assets/506fdd01-eee0-4d72-bd12-ee6c38eb2697)
 

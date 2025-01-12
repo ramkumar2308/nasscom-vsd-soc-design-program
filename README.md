@@ -101,7 +101,7 @@ The **yosys_2.stat.rpt** file is generated as part of the synthesis process in Y
 <details>
 <summary>This yosys_2.stat.rpt file helps designers analyze the following aspects of their hardware design:</summary>
 
-- Module Statistics: Details of synthesized modules, including their instances and resource utilization.
+- **Module Statistics:** Details of synthesized modules, including their instances and resource utilization.
 - **Cell Statistics:** Information on the types and counts of standard cells or logic elements used.
 - **Top-Level Design Summary:** Overall summary of the synthesized design, including the total number of cells, I/O ports, and gate count.
 - **Utilization Metrics:** Resource usage such as logic gates, registers, and multiplexers.

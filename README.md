@@ -3,8 +3,9 @@ This repository offers resources and examples for designing and planning VLSI (V
 # VLSI Desgin Flow
 #### _The VLSI Design Flow involves a series of well-defined steps to convert a high-level system specification into a physical silicon chip._
 
-![asic_flow1](https://github.com/user-attachments/assets/e208d6c8-ef85-435d-bca9-783ac4b5d0ce)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e208d6c8-ef85-435d-bca9-783ac4b5d0ce" width="600">
+</p>
 <details>
 <summary>The flow is divided into front-end and back-end stages:</summary>
 **1. Specification:**
@@ -130,3 +131,71 @@ Flop Ratio = No. of D Flipflops/ No. of Cells = 1613 / 14876
 
 Percentage of DFF's = 0.1084 * 100 
 ## Percentage of DFF's = 10.842 %
+
+# Day 2 - Good floorplan vs bad floorplan and introduction to library cells
+
+Floorplanning is a critical step in the physical design flow of a System-on-Chip (SoC). It involves defining the layout of various blocks and components on the chip to optimize performance, area, power, and manufacturability.
+
+<details>
+<summary>Key Goals of Floorplanning:</summary>
+
+- **Optimize Placement:** Arrange logic blocks and macros efficiently to minimize wirelength and reduce delay.
+- **Power Management:** Ensure proper placement of power distribution networks.
+- **Thermal Management:** Avoid hotspots by spreading power-hungry blocks appropriately.
+- **Clock Distribution:** Facilitate uniform and low-skew clock routing.
+- **Area Utilization:** Maximize the utilization of the available chip area while leaving room for routing and buffers.
+- **Partitioning:** Group related modules together for better performance and ease of routing.
+</details>
+
+<details>
+<summary>Key Steps in Floorplanning:</summary>
+- **Chip and Core Area Definition:** Define the overall dimensions of the chip and core area.
+- **Macro Placement:** Place large blocks like memories, IP cores, and analog components.
+- **Boundary Constraints:** Specify I/O pin placement and keep-out zones.
+- **Power Planning:** Establish power grids and ensure uniform power distribution.
+- **Placement Blockages:** Mark areas where placement is restricted (e.g., under macros).
+- **Aspect Ratio and Die Size:** Determine the chip aspect ratio and calculate die size based on design requirements.
+</details>
+
+# Utilization Factor and Aspect Ratio in Chip Design
+
+The utilization factor and aspect ratio are key metrics in chip design, especially during floorplanning, as they play a vital role in optimizing layout for efficiency in performance, power consumption, and manufacturability.
+
+**Utilization Factor:**
+
+The utilization factor is the ratio of the area occupied by standard cells, macros, and other active components to the total available core area of the chip.
+
+  ### Utilisation factor = Area occupied by netlist / Total Area of the Core
+<details>
+  <summary>Purpose and Standard Metrics</summary>
+  
+**Purpose:**
+
+- Ensures efficient use of available space.
+- Leaves enough room for routing wires and buffers.
+
+**Typical Values:**
+
+- Low Utilization: Leads to wasted space but allows easier routing.
+- High Utilization: Saves area but may cause routing congestion and timing issues.
+</details>
+
+**Aspect Ratio:**
+
+The aspect ratio defines the shape of the chip or core area by comparing its height to its width.
+
+### Aspect Ratio = Height / Width
+<details>
+  <summary>Purpose and Standard Metrics</summary>
+  
+**Purpose:**
+
+- Determines whether the chip is square, rectangular, or elongated.
+- Impacts the placement of components and the efficiency of routing.
+
+**Typical Values:**
+
+- An aspect ratio close to 1 results in a square layout, which is often ideal for balanced placement and routing.
+- Rectangular shapes are used when specific design constraints (like die size or I/O pin placement) demand it.
+</details>
+

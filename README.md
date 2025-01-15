@@ -157,13 +157,18 @@ Floorplanning is a critical step in the physical design flow of a System-on-Chip
 - **Aspect Ratio and Die Size:** Determine the chip aspect ratio and calculate die size based on design requirements.
 </details>
 
-# Utilization Factor and Aspect Ratio in Chip Design
+## Utilization Factor and Aspect Ratio in Chip Design
 
 The utilization factor and aspect ratio are key metrics in chip design, especially during floorplanning, as they play a vital role in optimizing layout for efficiency in performance, power consumption, and manufacturability.
 
 **Utilization Factor:**
 
 The utilization factor is the ratio of the area occupied by standard cells, macros, and other active components to the total available core area of the chip.
+
+![Screenshot (1079)](https://github.com/user-attachments/assets/98381907-4010-4cb6-a070-041535eadc0a)
+
+
+![Screenshot (1081)](https://github.com/user-attachments/assets/efa6fe15-3895-4ab9-a6d7-13dde2465f93)
 
   ### Utilisation factor = Area occupied by netlist / Total Area of the Core
 <details>
@@ -184,6 +189,8 @@ The utilization factor is the ratio of the area occupied by standard cells, macr
 
 The aspect ratio defines the shape of the chip or core area by comparing its height to its width.
 
+![Screenshot (1079)](https://github.com/user-attachments/assets/98381907-4010-4cb6-a070-041535eadc0a)
+
 ### Aspect Ratio = Height / Width
 <details>
   <summary>Purpose and Standard Metrics</summary>
@@ -199,3 +206,69 @@ The aspect ratio defines the shape of the chip or core area by comparing its hei
 - Rectangular shapes are used when specific design constraints (like die size or I/O pin placement) demand it.
 </details>
 
+## Preplaced cells:
+
+preplaced cells refer to functional blocks or modules that are placed in specific locations on the chip before the detailed placement and routing phases. These cells are typically critical components that must meet certain design constraints, such as timing, power, or connectivity requirements.
+
+
+
+<details>
+  <Summary>Steps to Define the Location of Preplaced Cells:</Summary>
+ 
+  - Analyze Functional Requirements
+    
+  - Partition the Chip
+  
+  - Place Based on Timing Constraints
+  
+  - Optimize Power Distribution
+  
+  - Manage Thermal Constraints
+  
+  - Respect Physical Constraints
+  
+  - Define Block Shapes and Boundaries
+  
+  - Account for Routing Congestion
+  
+  - Iterate and Validate
+
+</details>
+
+### Illustrative Snapshots of Preplaced Cells: Layout and Design Considerations
+
+![Screenshot (1083)](https://github.com/user-attachments/assets/4117a140-1c35-4b0d-a3d8-a1350ab0f5da)
+
+
+
+![Screenshot (1085)](https://github.com/user-attachments/assets/1f6247cc-56b0-4db6-b34b-534a75ec7771)
+
+
+### Proposed Placement:
+
+**Launch Flip-Flop (LFF):**
+
+Place at the bottom-left corner of the logic block as the starting point of the signal path.
+
+**AND Gate:**
+
+Place to the right of the LFF, ensuring minimal wire length between them.
+
+**OR Gate:**
+
+Place to the right of the AND gate, maintaining a compact signal path.
+
+**Capture Flip-Flop (CFF):**
+
+Place at the top-right corner, completing the critical timing path.
+
+**Decoupling Capacitors:**
+
+Place near the LFF and CFF to stabilize the supply voltage during switching.
+Also, distribute capacitors close to the AND and OR gates to reduce noise and ensure smooth transitions.
+
+![Screenshot (1091)](https://github.com/user-attachments/assets/54412b0a-0121-42df-8b56-b72a269a9fc3)
+
+### Power planning
+
+Power planning in the SoC (System-on-Chip) design flow is a critical aspect of ensuring that the chip meets its power, performance, and thermal requirements. It involves a combination of architectural, physical design, and verification steps to manage power consumption effectively. 

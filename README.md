@@ -211,6 +211,7 @@ The aspect ratio defines the shape of the chip or core area by comparing its hei
 preplaced cells refer to functional blocks or modules that are placed in specific locations on the chip before the detailed placement and routing phases. These cells are typically critical components that must meet certain design constraints, such as timing, power, or connectivity requirements.
 
 
+![Screenshot (1086)](https://github.com/user-attachments/assets/18400f2f-4a6e-4e97-a2eb-53402f85ae10)
 
 <details>
   <Summary>Steps to Define the Location of Preplaced Cells:</Summary>
@@ -272,3 +273,62 @@ Also, distribute capacitors close to the AND and OR gates to reduce noise and en
 ### Power planning
 
 Power planning in the SoC (System-on-Chip) design flow is a critical aspect of ensuring that the chip meets its power, performance, and thermal requirements. It involves a combination of architectural, physical design, and verification steps to manage power consumption effectively. 
+
+<details>
+  <summary>Snapshots of the detailed explanation on Power Planning:</summary>
+
+![Screenshot (1092)](https://github.com/user-attachments/assets/5d10ef97-2b84-4933-bab2-dd1a5e6d67b2)
+
+
+![Screenshot (1093)](https://github.com/user-attachments/assets/20a37c22-47f3-4880-8be6-f71197b810c2)
+
+
+
+![Screenshot (1094)](https://github.com/user-attachments/assets/df506785-4a21-4f22-b0dd-a159f8f3ad6b)
+
+![Screenshot (1095)](https://github.com/user-attachments/assets/63c4f11e-f605-4805-8fbc-2b7613d34aa1)
+
+![Screenshot (1096)](https://github.com/user-attachments/assets/16d6e771-f911-4cff-8588-6474a9cc65d0)
+</details>
+
+![Screenshot (1097)](https://github.com/user-attachments/assets/3a5fa361-0782-43fe-abe9-d8359c8fd03c)
+
+### Pin Placement and Logical Cell Placement Blockage in SoC Design
+
+**Pin Placement**
+  
+- Pin placement is crucial for ensuring efficient routing and signal integrity in an SoC design.
+
+![Screenshot (1106)](https://github.com/user-attachments/assets/4339e04e-fc40-4273-98d9-02821ee6eba5)
+
+**Power and Ground Pin Placement:**
+  
+- Distribute power pins evenly to minimize resistance and support current distribution across the chip.
+- Place power pins near high-power blocks like processors to ensure proper power delivery.
+
+**Placement Based on Block Locations:**
+
+- Ensure pins for each block are placed near their corresponding cells to reduce long routing paths, improving speed and power efficiency.
+
+**Logical Cell Placement Blockage**
+
+<details>
+  <summary>After power planning, cells are placed within the chip, respecting power domains and avoiding blockages.
+</summary>
+  
+ **Respect Power Domains:**
+
+- Cells should be placed in their respective power domains, ensuring they match the power requirements of each region.
+  
+**Avoid Blockages:**
+
+- Physical Blockages: Regions where no cells can be placed due to power grids or analog circuits.
+- Power Blockages: Areas where power-domain boundaries prevent placement of certain cells.
+- Thermal Blockages: Areas where high-power cells should be avoided to prevent overheating.
+
+**Placement of High-Power Modules:**
+
+- High-power modules (e.g., processors, GPUs) should be placed strategically to avoid thermal issues and ensure proper cooling.
+
+</details>
+

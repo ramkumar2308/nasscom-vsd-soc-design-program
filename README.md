@@ -247,6 +247,13 @@ preplaced cells refer to functional blocks or modules that are placed in specifi
 
 ### Proposed Placement:
 
+#### Complete Design:
+
+![Screenshot (1103)](https://github.com/user-attachments/assets/0d1f3b22-d427-4e7a-a490-d8c65019c969)
+
+
+
+
 **Launch Flip-Flop (LFF):**
 
 Place at the bottom-left corner of the logic block as the starting point of the signal path.
@@ -270,6 +277,44 @@ Also, distribute capacitors close to the AND and OR gates to reduce noise and en
 
 ![Screenshot (1091)](https://github.com/user-attachments/assets/54412b0a-0121-42df-8b56-b72a269a9fc3)
 
+## Configuration of the Design:
+
+![Screenshot from 2025-01-19 23-49-02](https://github.com/user-attachments/assets/e816b412-b787-40ef-ad62-625a47acb097)
+
+The configuration file for floorplanning in VLSI SoC design includes several key sections. The [GENERAL] section specifies design parameters such as the name of the SoC design, the manufacturing technology node, the standard cell library to be used, the aspect ratio of the die, and the total die area.
+
+- The **Synthesis** Converts high-level RTL design into a gate-level netlist using standard cell libraries, optimizing for area, power, and performance while meeting timing constraints.
+
+![Screenshot from 2025-01-19 23-47-42](https://github.com/user-attachments/assets/29539722-625b-4431-b39b-c19ffb828e71)
+
+
+- The **FLOORPLAN_CONSTRAINTS** section defines constraints like the percentage of core area utilized by cells, the margin around the core, the minimum spacing between IO cells and the core, and whether to block specific regions from cell placement.
+
+![Screenshot from 2025-01-19 23-47-54](https://github.com/user-attachments/assets/4f05d12d-eedb-4b81-810f-e554af58498f)
+
+- The **POWER_PLAN** section provides details for power distribution, including the metal layers used for the power grid, the width and spacing of power straps, and the locations of power and ground pins.
+
+- The **MACROS** section includes parameters for macro placement, such as the placement strategy, the minimum spacing between macros, and the allowed orientations for macros.
+
+- The **PLACEMENT** section includes constraints on cell placement, such as the maximum allowable displacement for cells and the standard cell row height.
+
+![Screenshot from 2025-01-19 23-48-01](https://github.com/user-attachments/assets/6f2199b8-d920-4ebd-b72d-c65811a424d3)
+
+- The **Routing** Connects the placed components using metal layers, adhering to design rules and minimizing delays, congestion, and signal integrity issues.
+
+- The **Magic** A VLSI layout tool used for creating, editing, and verifying physical designs, including Design Rule Checking (DRC) and visualization.
+
+![Screenshot from 2025-01-19 23-48-09](https://github.com/user-attachments/assets/8fc16883-1fdd-4b05-bfa3-15c80c85dc4d)
+
+- **The LVS (Layout vs. Schematic)** Verifies that the physical layout matches the intended circuit schematic by comparing connectivity and component parameters.
+
+- The **Flow Control** Manages the sequence of design steps (e.g., synthesis, placement, routing) and automates tasks to ensure smooth and efficient execution of the design flow.
+
+![Screenshot from 2025-01-19 23-48-21](https://github.com/user-attachments/assets/baca0be8-a873-4a7f-bdae-152dc253ce89)
+
+
+This structure ensures the design adheres to physical and technological constraints while optimizing placement and routing.
+
 ### Power planning
 
 Power planning in the SoC (System-on-Chip) design flow is a critical aspect of ensuring that the chip meets its power, performance, and thermal requirements. It involves a combination of architectural, physical design, and verification steps to manage power consumption effectively. 
@@ -281,7 +326,6 @@ Power planning in the SoC (System-on-Chip) design flow is a critical aspect of e
 
 
 ![Screenshot (1093)](https://github.com/user-attachments/assets/20a37c22-47f3-4880-8be6-f71197b810c2)
-
 
 
 ![Screenshot (1094)](https://github.com/user-attachments/assets/df506785-4a21-4f22-b0dd-a159f8f3ad6b)
@@ -312,6 +356,9 @@ Power planning in the SoC (System-on-Chip) design flow is a critical aspect of e
 
 **Logical Cell Placement Blockage**
 
+![Screenshot (1106)](https://github.com/user-attachments/assets/ae5b6a83-d4d0-4a6f-9fe7-96456765e2bc)
+
+
 <details>
   <summary>After power planning, cells are placed within the chip, respecting power domains and avoiding blockages.
 </summary>
@@ -332,3 +379,44 @@ Power planning in the SoC (System-on-Chip) design flow is a critical aspect of e
 
 </details>
 
+## Snapshots of the Floorplan and Placement:
+
+- Contents of the floorplan.tcl file
+
+![Screenshot from 2025-01-19 11-25-16](https://github.com/user-attachments/assets/b64705e1-468f-473f-89e7-88a0507aaf97)
+
+![Screenshot from 2025-01-19 11-25-12](https://github.com/user-attachments/assets/d63041a0-fa7c-49af-b5df-89d498d686fb)
+
+- Layout formation by reading the picorv32a.def file using magic tool for displaying the layout:
+
+![Screenshot from 2025-01-19 11-32-47](https://github.com/user-attachments/assets/0ec5ac73-af9a-4cce-98a7-1a7d48780b5a)
+
+![Screenshot from 2025-01-19 11-32-01](https://github.com/user-attachments/assets/fb833b4c-dfb3-4b50-a27a-828faf0d538c)
+
+![Screenshot from 2025-01-19 11-30-06](https://github.com/user-attachments/assets/9280b5d3-1cfa-4cc0-89f9-67472eab3c49)
+
+- Output of the layout by changing the distance between the IO pins to 2:
+
+**set ::env(FP_IO_MODE) 2;**
+
+![Screenshot from 2025-01-19 11-04-19](https://github.com/user-attachments/assets/397ac730-0f69-4396-92c0-d7f7efec6513)
+
+- Layout fromation after reating the Placement.def file and displaying the layout using magic:
+
+![Screenshot from 2025-01-19 11-39-17](https://github.com/user-attachments/assets/a3a80246-c5e9-4f7f-bfd1-89e5b15bd328)
+
+![Screenshot from 2025-01-19 11-37-37](https://github.com/user-attachments/assets/d2e27d6c-ce33-4ea0-93b0-85fbaa053267)
+
+### Die area:
+
+- The die area refers to the total physical area of the silicon chip that contains all the integrated components, such as processors, memory, and peripherals. 
+
+- It is typically measured in square micrometers (µm²) and is a critical parameter that impacts the cost, performance, and power efficiency of the SoC.
+
+![Screenshot from 2025-01-19 11-29-29](https://github.com/user-attachments/assets/97ee5c53-6357-43de-b9fd-a22b242ccb06)
+
+Die area = value / 1000 micrometer
+
+Die area = (660685 / 1000 = 660.685 micrometer, 671405 / 1000 = 671.405 micromter)
+
+## Die area = (660.685, 671.405) mm2
